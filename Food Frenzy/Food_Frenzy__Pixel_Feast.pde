@@ -1,18 +1,13 @@
-PImage ImgFondo;
-PImage Imgamer;
-PImage ImgCooker;
-float PgirlX, PgirlY;
-float velocidad = 4.0;
-
+//constructores
+GamerEmma GamerEmma;
+Cocina Cocina;
 void setup() {
-  size(800, 800);
+  size(600, 600);
   background(0);
-  ImgFondo = loadImage("cocina2.png"); 
-  Imgamer = loadImage("purplegirl1.png");
+  Cocina = new Cocina();
+  GamerEmma = new GamerEmma();
 }
-
-void draw(){
-image(ImgFondo, 0, 0, width, height);
-
-
+void draw() {
+  Cocina.dibujarCocina();
+  GamerEmma.dibujarEmmaUno();
 }
