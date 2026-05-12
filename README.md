@@ -27,6 +27,6 @@ El código está estructurado para ser escalable, separando las entidades en cla
 •	“/data”: Carpeta de recursos (assets) que contiene los archivos `.png` exportados desde LibreSprite.
 
 ---
-Proyecto desarrollado por un estudiante de Ing. En Sistemas de Información.
+Proyecto desarrollado por dos estudiantes de Ing. En Sistemas de Información.
 Sofía Belén Barboza Arguello.
 Delfina Amendolari Volman.
