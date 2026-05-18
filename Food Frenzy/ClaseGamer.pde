@@ -11,22 +11,21 @@ class GamerEmma {
   }
   //dibujo de clase, con uso de "if"
   void dibujarEmmaUno() {
-    if (Imgamer != null) {
-      image(Imgamer, PgirlX, PgirlY, 120, 120);
-    }
+    image(Imgamer, PgirlX, PgirlY, 120, 120);
   }
+  //mvovimiento de Emma por medio de condicionales
   void movimientoEmma() {
     if (keyPressed && key == 'a' && PgirlX > 0 ) {
       PgirlX -= velocidad;
     }
-    if (keyPressed && key == 'd' && PgirlX < 600 ) {
+    if (keyPressed && key == 'd' && PgirlX < 480 ) {
       PgirlX += velocidad;
     }
     if (keyPressed && key == 'w' && PgirlY > 0 ) {
       PgirlY -= velocidad;
     }
-    if (keyPressed && key == 's' && PgirlY < 600 ) {
+    if (keyPressed && key == 's' && PgirlY < 480 ) {
       PgirlY += velocidad;
-    }  
-}
+    }
+  }
 }
