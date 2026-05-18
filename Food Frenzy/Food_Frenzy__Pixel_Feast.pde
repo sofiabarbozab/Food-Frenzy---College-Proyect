@@ -10,4 +10,5 @@ void setup() {
 void draw() {
   Cocina.dibujarCocina();
   GamerEmma.dibujarEmmaUno();
+  GamerEmma.movimientoEmma();
 }
