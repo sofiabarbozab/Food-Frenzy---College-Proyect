@@ -7,7 +7,7 @@ class GamerEmma {
     Imgamer = loadImage("gamer-estadoUno.png");
     PgirlX = width/2;
     PgirlY = height/2;
-    velocidad = 10;
+    velocidad = 4;
   }
   //dibuja de clase.
   void dibujarEmmaUno() {

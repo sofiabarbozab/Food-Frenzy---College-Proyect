@@ -22,26 +22,26 @@ class Comida {
   }
 
   void agarrarcomidapa() {
-   if(dist(EmoCocinero.x,EmoCocinero.y,xpa,ypa) < 100){
-      xpa = EmoCocinero.x;
-      ypa = EmoCocinero.y;
-   }
+    if (dist(EmoCocinero.x, EmoCocinero.y, xpa, ypa) < 100) {
+      xpa = EmoCocinero.x+15;
+      ypa = EmoCocinero.y+20;
+    }
   }
-  
+
   void agarrarcomidac() {
-   if(dist(EmoCocinero.x,EmoCocinero.y,xc,yc) < 100){
-      xc = EmoCocinero.x;
-      yc = EmoCocinero.y;
+    if (dist(EmoCocinero.x, EmoCocinero.y, xc, yc) < 100) {
+      xc = EmoCocinero.x+15;
+      yc = EmoCocinero.y+30;
     }
   }
-  
+
   void agarrarcomidapo() {
-   if(dist(EmoCocinero.x,EmoCocinero.y,xpo,ypo) < 100){
-      xpo = EmoCocinero.x;
-      ypo = EmoCocinero.y;
+    if (dist(EmoCocinero.x, EmoCocinero.y, xpo, ypo) < 100) {
+      xpo = EmoCocinero.x+15;
+      ypo = EmoCocinero.y+10;
     }
   }
-  
+
   void dibujarComidacruda() {
     image(ImgCarnec, xc, yc, 60, 60);
     image(ImgPapasc, xpa, ypa, 60, 60);
