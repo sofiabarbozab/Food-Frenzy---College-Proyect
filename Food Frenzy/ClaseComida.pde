@@ -16,7 +16,10 @@ class Comida {
     ImgPolloco = loadImage("polloCocido.png");
   }
 
+/*  void agarrarcomida() {
+    if(x <68, y < 68){}
 
+  }*/
   void dibujarComidacruda() {
     image(ImgCarnec, x + 290, y +530, 60, 60);
     image(ImgPapasc, x + 240, y +530, 60, 60);
