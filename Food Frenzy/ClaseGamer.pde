@@ -1,13 +1,13 @@
 class GamerEmma {
   PImage Imgamer;
-  float PgirlX, PgirlY;
-  float velocidad = 4.0;
+  int PgirlX, PgirlY, velocidad;
 
   //constructor.
   GamerEmma() {
     Imgamer = loadImage("gamer-estadoUno.png");
     PgirlX = width/2;
     PgirlY = height/2;
+    velocidad = 10;
   }
   //dibuja de clase.
   void dibujarEmmaUno() {

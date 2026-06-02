@@ -6,11 +6,11 @@ class Cocinero{
     imgCocinero = loadImage("Cocinero_1.png");
     x = width/2;
     y = height/2;
-    velocidad =  4;
+    velocidad =  10;
   }
   
   void displayCocinero(){ //Mostrast al Cocinero.
-    image(imgCocinero,x,y,200,200);
+    image(imgCocinero,x,y,100,100);
   }
   //Función para mover al cocinero.
   void moveCocinero(){
@@ -23,7 +23,7 @@ class Cocinero{
     if (keyPressed && key == CODED && keyCode == UP && y > 0 ) {
       y -= velocidad;
     }
-    if (keyPressed && key == CODED && keyCode == DOWN && y < 420 ) {
+    if (keyPressed && key == CODED && keyCode == DOWN && y < 448 ) {
       y += velocidad;
     }
   }

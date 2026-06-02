@@ -1,6 +1,5 @@
 class Comida {
-  int x;
-  int y;
+  int xpo, ypo, xpa, ypa, xc, yc;
   PImage ImgCarnec;
   PImage ImgPapasc;
   PImage ImgPolloc;
@@ -8,6 +7,12 @@ class Comida {
   PImage ImgPapasco;
   PImage ImgPolloco;
   Comida() {
+    xpo = 190;
+    xpa = 240;
+    xc = 290;
+    ypo = 530;
+    ypa = 530;
+    yc = 530;
     ImgCarnec = loadImage("carneCruda.png");
     ImgPapasc = loadImage("papasCrudas.png");
     ImgPolloc = loadImage("polloCrudo.png");
@@ -16,19 +21,36 @@ class Comida {
     ImgPolloco = loadImage("polloCocido.png");
   }
 
-/*  void agarrarcomida() {
-    if(x <68, y < 68){}
-
-  }*/
+  void agarrarcomidapa() {
+   if(dist(EmoCocinero.x,EmoCocinero.y,xpa,ypa) < 100){
+      xpa = EmoCocinero.x;
+      ypa = EmoCocinero.y;
+   }
+  }
+  
+  void agarrarcomidac() {
+   if(dist(EmoCocinero.x,EmoCocinero.y,xc,yc) < 100){
+      xc = EmoCocinero.x;
+      yc = EmoCocinero.y;
+    }
+  }
+  
+  void agarrarcomidapo() {
+   if(dist(EmoCocinero.x,EmoCocinero.y,xpo,ypo) < 100){
+      xpo = EmoCocinero.x;
+      ypo = EmoCocinero.y;
+    }
+  }
+  
   void dibujarComidacruda() {
-    image(ImgCarnec, x + 290, y +530, 60, 60);
-    image(ImgPapasc, x + 240, y +530, 60, 60);
-    image(ImgPolloc, x + 190, y +530, 60, 60);
+    image(ImgCarnec, xc, yc, 60, 60);
+    image(ImgPapasc, xpa, ypa, 60, 60);
+    image(ImgPolloc, xpo, ypo, 60, 60);
   }
 
   void dibujarComidacocida() {
-    image(ImgCarneco, x + 130, y +530, 60, 60);
-    image(ImgPapasco, x + 130, y +530, 60, 60);
-    image(ImgPolloco, x + 130, y +530, 60, 60);
+    image(ImgCarneco, xc, yc, 60, 60);
+    image(ImgPapasco, xpa, ypa, 60, 60);
+    image(ImgPolloco, xpo, ypo, 60, 60);
   }
 }
