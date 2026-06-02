@@ -6,7 +6,7 @@ class Cocinero{
     imgCocinero = loadImage("Cocinero_1.png");
     x = width/2;
     y = height/2;
-    velocidad =  10;
+    velocidad =  4;
   }
   
   void displayCocinero(){ //Mostrast al Cocinero.

@@ -20,6 +20,5 @@ void draw() {
   Comida.agarrarcomidac();
   Comida.agarrarcomidapa();
   Comida.agarrarcomidapo();
-  println(EmoCocinero.x);
-  println(EmoCocinero.y);
+
 }
