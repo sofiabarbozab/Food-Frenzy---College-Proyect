@@ -1,24 +1,23 @@
 //constructores
 GamerEmma GamerEmma;
-Cocinero EmoCocinero;
+Cocinero rubioCocinero;
 Cocina Cocina;
 Comida Comida;
 void setup() {
   size(600, 600);
   Cocina = new Cocina();
   GamerEmma = new GamerEmma();
-  EmoCocinero = new Cocinero();
+  rubioCocinero = new Cocinero();
   Comida = new Comida();
 }
 void draw() {
   Cocina.dibujarCocina();
   GamerEmma.dibujarEmmaUno();
-  EmoCocinero.displayCocinero();
+  rubioCocinero.displayCocinero();
   GamerEmma.movimientoEmma();
-  EmoCocinero.moveCocinero();
+  rubioCocinero.moveCocinero();
   Comida.dibujarComidacruda();
-  Comida.agarrarcomidac();
-  Comida.agarrarcomidapa();
-  Comida.agarrarcomidapo();
-
+  Comida.sostenercomidac();
+  Comida.sostenercomidapa();
+  Comida.sostenercomidapo();
 }

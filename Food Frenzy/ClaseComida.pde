@@ -1,5 +1,6 @@
 class Comida {
   int xpo, ypo, xpa, ypa, xc, yc;
+  boolean comidaCruda, comidaCocida;
   PImage ImgCarnec;
   PImage ImgPapasc;
   PImage ImgPolloc;
@@ -21,36 +22,51 @@ class Comida {
     ImgPolloco = loadImage("polloCocido.png");
   }
 
-  void agarrarcomidapa() {
-    if (dist(EmoCocinero.x, EmoCocinero.y, xpa, ypa) < 100) {
-      xpa = EmoCocinero.x+15;
-      ypa = EmoCocinero.y+20;
+  void sostenercomidapa() {
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xpa, ypa) < 100) {
+      xpa = rubioCocinero.x+15;
+      ypa = rubioCocinero.y+20;
+    }
+    
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
+      
     }
   }
 
-  void agarrarcomidac() {
-    if (dist(EmoCocinero.x, EmoCocinero.y, xc, yc) < 100) {
-      xc = EmoCocinero.x+15;
-      yc = EmoCocinero.y+30;
+  void sostenercomidac() {
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xc, yc) < 100) {
+      xc = rubioCocinero.x+15;
+      yc = rubioCocinero.y+30;
+    }
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
+      
     }
   }
 
-  void agarrarcomidapo() {
-    if (dist(EmoCocinero.x, EmoCocinero.y, xpo, ypo) < 100) {
-      xpo = EmoCocinero.x+15;
-      ypo = EmoCocinero.y+10;
+  void sostenercomidapo() {
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xpo, ypo) < 100) {
+      xpo = rubioCocinero.x+15;
+      ypo = rubioCocinero.y+10;
+    }
+    
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
+      
     }
   }
+  
+  
 
   void dibujarComidacruda() {
     image(ImgCarnec, xc, yc, 60, 60);
     image(ImgPapasc, xpa, ypa, 60, 60);
     image(ImgPolloc, xpo, ypo, 60, 60);
+    comidaCruda = true;
   }
 
   void dibujarComidacocida() {
     image(ImgCarneco, xc, yc, 60, 60);
     image(ImgPapasco, xpa, ypa, 60, 60);
     image(ImgPolloco, xpo, ypo, 60, 60);
+    comidaCocida = true;
   }
 }
