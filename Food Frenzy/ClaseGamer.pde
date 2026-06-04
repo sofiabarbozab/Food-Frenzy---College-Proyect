@@ -10,11 +10,11 @@ class GamerEmma {
     velocidad = 4;
   }
   //dibuja de clase.
-  void dibujarEmmaUno() {
+  void mostrarEmmaUno() {
     image(Imgamer, PgirlX, PgirlY, 100, 100);
   }
   //Función mvovimiento de Emma por medio de condicionales.
-  void movimientoEmma() {
+  void moverEmma() {
     if (keyPressed && key == 'a' && PgirlX > 0 ) {
       PgirlX -= velocidad;
     }
