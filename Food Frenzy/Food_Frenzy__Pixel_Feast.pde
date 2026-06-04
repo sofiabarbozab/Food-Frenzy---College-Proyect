@@ -1,23 +1,29 @@
 //constructores
 GamerEmma GamerEmma;
 Cocinero rubioCocinero;
-Cocina Cocina;
+Estados Estados;
 Comida Comida;
+
 void setup() {
   size(600, 600);
-  Cocina = new Cocina();
+  Estados = new Estados();
   GamerEmma = new GamerEmma();
   rubioCocinero = new Cocinero();
   Comida = new Comida();
 }
 void draw() {
-  Cocina.dibujarCocina();
-  GamerEmma.dibujarEmmaUno();
-  rubioCocinero.displayCocinero();
-  GamerEmma.movimientoEmma();
-  rubioCocinero.moveCocinero();
-  Comida.dibujarComidacruda();
-  Comida.sostenercomidac();
-  Comida.sostenercomidapa();
-  Comida.sostenercomidapo();
+  switch(Estados.estado) {
+  case 0;
+    Estados.Inicio();
+    break;
+    Estados.Cocina();
+    rubioCocinero.displayCocinero();
+    rubioCocinero.moveCocinero();
+    Comida.dibujarComidacruda();
+    Comida.sostenercomidac();
+    Comida.sostenercomidapa();
+    Comida.sostenercomidapo();
+    GamerEmma.dibujarEmmaUno();
+    GamerEmma.movimientoEmma();
+  }
 }

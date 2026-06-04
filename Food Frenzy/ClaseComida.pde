@@ -11,9 +11,9 @@ class Comida {
     xpo = 190;
     xpa = 240;
     xc = 290;
-    ypo = 530;
-    ypa = 530;
-    yc = 530;
+    ypo = 500;
+    ypa = 500;
+    yc = 500;
     ImgCarnec = loadImage("carneCruda.png");
     ImgPapasc = loadImage("papasCrudas.png");
     ImgPolloc = loadImage("polloCrudo.png");
@@ -27,9 +27,8 @@ class Comida {
       xpa = rubioCocinero.x+15;
       ypa = rubioCocinero.y+20;
     }
-    
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
-      
+
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
     }
   }
 
@@ -38,8 +37,7 @@ class Comida {
       xc = rubioCocinero.x+15;
       yc = rubioCocinero.y+30;
     }
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
-      
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
     }
   }
 
@@ -48,13 +46,12 @@ class Comida {
       xpo = rubioCocinero.x+15;
       ypo = rubioCocinero.y+10;
     }
-    
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y,149,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,0) == 0 || dist(rubioCocinero.x, rubioCocinero.y,149,94) == 0 || dist(rubioCocinero.x, rubioCocinero.y,225,94) == 0){
-      
+
+    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
     }
   }
-  
-  
+
+
 
   void dibujarComidacruda() {
     image(ImgCarnec, xc, yc, 60, 60);

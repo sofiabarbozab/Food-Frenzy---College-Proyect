@@ -14,16 +14,16 @@ class Cocinero{
   }
   //Función para mover al cocinero.
   void moveCocinero(){
-    if (keyPressed && key == CODED && keyCode == LEFT && x > 60 ) {
+    if (keyPressed && key == CODED && keyCode == LEFT && x > 110 ) {
       x -= velocidad;
     }
-    if (keyPressed && key == CODED && keyCode == RIGHT && x < 480 ) {
+    if (keyPressed && key == CODED && keyCode == RIGHT && x < 500 ) {
       x += velocidad;
     }
-    if (keyPressed && key == CODED && keyCode == UP && y > 0 ) {
+    if (keyPressed && key == CODED && keyCode == UP && y > 50 ) {
       y -= velocidad;
     }
-    if (keyPressed && key == CODED && keyCode == DOWN && y < 448 ) {
+    if (keyPressed && key == CODED && keyCode == DOWN && y < 405 ) {
       y += velocidad;
     }
   }
