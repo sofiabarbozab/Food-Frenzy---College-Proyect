@@ -1,17 +1,17 @@
-//constructores
-GamerEmma GamerEmma;
-Cocinero rubioCocinero;
+//Contructores de Clases
+Gamer Emma;
+Cocinero Michello;
 Fondos Fondo;
-Comida Comida;
+Comidas Comida;
 Botones Boton;
 
 void setup() {
   size(600, 600);
   imageMode(CENTER);
   Fondo = new Fondos();
-  GamerEmma = new GamerEmma();
-  rubioCocinero = new Cocinero();
-  Comida = new Comida();
+  Emma = new Gamer();
+  Michello = new Cocinero();
+  Comida = new Comidas();
   Boton = new Botones();
 }
 void draw() {

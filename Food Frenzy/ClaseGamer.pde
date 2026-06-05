@@ -1,31 +1,31 @@
-class GamerEmma {
-  PImage Imgamer;
-  int PgirlX, PgirlY, velocidad;
+class Gamer {
+  PImage ImgGamer;
+  int x,y,velocidad;
 
   //constructor.
-  GamerEmma() {
-    Imgamer = loadImage("gamer-estadoUno.png");
-    PgirlX = width/2;
-    PgirlY = height/2;
+  Gamer() {
+    ImgGamer = loadImage("gamer-estadoUno.png");
+    x = width/2;
+    y = height/2;
     velocidad = 4;
   }
   //dibuja de clase.
-  void mostrarEmmaUno() {
-    image(Imgamer, PgirlX, PgirlY, 100, 100);
+  void mostrarGamerUno() {
+    image(ImgGamer, x, y, 100, 100);
   }
-  //Función mvovimiento de Emma por medio de condicionales.
-  void moverEmma() {
-    if (keyPressed && key == 'a' && PgirlX > 0 ) {
-      PgirlX -= velocidad;
+  //Función movimiento de Emma por medio de condicionales.
+  void moverGamer() {
+    if (keyPressed && key == 'a' && x > 0 ) {
+      x -= velocidad;
     }
-    if (keyPressed && key == 'd' && PgirlX < 500 ) {
-      PgirlX += velocidad;
+    if (keyPressed && key == 'd' && x < 500 ) {
+      x += velocidad;
     }
-    if (keyPressed && key == 'w' && PgirlY > 0 ) {
-      PgirlY -= velocidad;
+    if (keyPressed && key == 'w' && y > 0 ) {
+      y -= velocidad;
     }
-    if (keyPressed && key == 's' && PgirlY < 500 ) {
-      PgirlY += velocidad;
+    if (keyPressed && key == 's' && y < 500 ) {
+      y += velocidad;
     }
   }
 }

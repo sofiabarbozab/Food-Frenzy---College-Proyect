@@ -1,4 +1,4 @@
-class Comida {
+class Comidas {
   int xpo, ypo, xpa, ypa, xc, yc;
   boolean comidaCruda, comidaCocida;
   PImage ImgCarnec;
@@ -7,7 +7,7 @@ class Comida {
   PImage ImgCarneco;
   PImage ImgPapasco;
   PImage ImgPolloco;
-  Comida() {
+  Comidas() {
     xpo = 190;
     xpa = 240;
     xc = 290;
@@ -23,31 +23,23 @@ class Comida {
   }
 
   void sostenercomidapa() {
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xpa, ypa) < 100) {
-      xpa = rubioCocinero.x+15;
-      ypa = rubioCocinero.y+20;
-    }
-
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
+    if (comidaCruda == true && dist(Michello.x, Michello.y, xpa, ypa) < 100) {
+      xpa = Michello.x+15;
+      ypa = Michello.y+20;
     }
   }
 
   void sostenercomidac() {
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xc, yc) < 100) {
-      xc = rubioCocinero.x+15;
-      yc = rubioCocinero.y+30;
-    }
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
+    if (comidaCruda == true && dist(Michello.x, Michello.y, xc, yc) < 100) {
+      xc = Michello.x+15;
+      yc = Michello.y+30;
     }
   }
 
   void sostenercomidapo() {
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, xpo, ypo) < 100) {
-      xpo = rubioCocinero.x+15;
-      ypo = rubioCocinero.y+10;
-    }
-
-    if (comidaCruda == true && dist(rubioCocinero.x, rubioCocinero.y, 149, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 0) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 149, 94) == 0 || dist(rubioCocinero.x, rubioCocinero.y, 225, 94) == 0) {
+    if (comidaCruda == true && dist(Michello.x, Michello.y, xpo, ypo) < 100) {
+      xpo = Michello.x+15;
+      ypo = Michello.y+10;
     }
   }
 

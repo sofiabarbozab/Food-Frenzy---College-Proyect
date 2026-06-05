@@ -9,11 +9,11 @@ class Cocinero{
     velocidad =  4;
   }
   
-  void displayCocinero(){ //Mostrast al Cocinero.
+  void mostrarCocinero(){ //Función que muestra al Cocinero
     image(imgCocinero,x,y,100,100);
   }
-  //Función para mover al cocinero.
-  void moveCocinero(){
+
+  void moverCocinero(){ //Función que mueve al Cocinero
     if (keyPressed && key == CODED && keyCode == LEFT && x > 110 ) {
       x -= velocidad;
     }
