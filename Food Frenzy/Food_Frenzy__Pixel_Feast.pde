@@ -3,18 +3,22 @@ GamerEmma GamerEmma;
 Cocinero rubioCocinero;
 Fondos Fondo;
 Comida Comida;
+Botones Boton;
 
 void setup() {
   size(600, 600);
+  imageMode(CENTER);
   Fondo = new Fondos();
   GamerEmma = new GamerEmma();
   rubioCocinero = new Cocinero();
   Comida = new Comida();
+  Boton = new Botones();
 }
 void draw() {
   switch(Fondo.estado) {
   case 0: //Pantalla de Inicio
     Fondo.mostrarPInicio();
+    Boton.botonPlay();
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();
@@ -35,4 +39,5 @@ void draw() {
     Fondo.mostrarPDerrota();
     break;
   }
+  println(dist(mouseX,mouseY,Boton.x,Boton.y) + " dist");
 }
