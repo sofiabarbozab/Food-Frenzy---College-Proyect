@@ -20,6 +20,7 @@ void draw() {
     Fondo.mostrarPInicio();
     Boton.botonPlay();
     Boton.botonHistoria();
+    Boton.botonInstrucciones();
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();

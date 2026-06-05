@@ -8,7 +8,7 @@ class Botones{
     botonInstrucciones = loadImage("botonInstrucciones.png");
     x = width/2;
     y = 530;
-    tam = 80;
+    tam = 78;
   }
   
   void botonPlay(){
@@ -19,9 +19,16 @@ class Botones{
   }
   
   void botonHistoria(){
-    image(botonHistoria,x,y,tam,tam);
-    if(mousePressed && dist(mouseX,mouseY,x,y) <= tam/2){
+    image(botonHistoria,x + tam + 10,y,tam,tam);
+    if(mousePressed && dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
       Fondo.estado = 2;
+    }
+  }
+  
+  void botonInstrucciones(){
+    image(botonHistoria,x - tam - 10,y,tam,tam);
+    if(mousePressed && dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
+      Fondo.estado = 1;
     }
   }
 }
