@@ -19,6 +19,7 @@ void draw() {
   case 0: //Pantalla de Inicio
     Fondo.mostrarPInicio();
     Boton.botonPlay();
+    Boton.botonHistoria();
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();
@@ -39,5 +40,5 @@ void draw() {
     Fondo.mostrarPDerrota();
     break;
   }
-  println(dist(mouseX,mouseY,Boton.x,Boton.y) + " dist");
+  println(mouseY + " Y");
 }
