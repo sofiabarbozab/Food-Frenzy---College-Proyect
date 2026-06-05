@@ -18,7 +18,7 @@ void draw() {
   switch(Fondo.estado) {
   case 0: //Pantalla de Inicio
     Fondo.mostrarPInicio();
-    Boton.botonPlay();
+    Boton.botonJugar();
     Boton.botonHistoria();
     Boton.botonInstrucciones();
     break;
@@ -41,5 +41,4 @@ void draw() {
     Fondo.mostrarPDerrota();
     break;
   }
-  println(mouseY + " Y");
 }

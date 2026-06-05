@@ -5,11 +5,11 @@ class Fondos {
   Fondos(){
     estado = 0;
     imgPInicio = loadImage("pInicio.png");
-    imgInstrucciones = loadImage("instruccionesPrueba.png");
-    imgHistoria = loadImage("historiaPrueba.png");
+    imgInstrucciones = loadImage("instruccionesPrueba.png"); // Hay que hacer la imagen de Instrucciones
+    imgHistoria = loadImage("historiaPrueba.png"); // Hay que hacer la imagen de Historia
     imgCocina = loadImage("cocina2.png");
     imgHabitacion = loadImage("habitacion2.png");
-    imgPVictoria = loadImage("victoriaPrueba.png");
+    imgPVictoria = loadImage("victoriaPrueba.png"); // Hay que hacer la imagen de Pantalla de Victoria
     imgPDerrota = loadImage("pDerrota.png");
   }
   

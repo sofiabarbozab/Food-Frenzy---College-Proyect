@@ -1,9 +1,9 @@
 class Botones{
-  PImage botonPlay, botonHistoria, botonInstrucciones;
+  PImage botonJugar, botonHistoria, botonInstrucciones;
   int x,y,tam;
   
   Botones(){
-    botonPlay = loadImage("botonPlay.png");
+    botonJugar = loadImage("botonJugar.png");
     botonHistoria = loadImage("botonHistoria.png");
     botonInstrucciones = loadImage("botonInstrucciones.png");
     x = width/2;
@@ -11,21 +11,21 @@ class Botones{
     tam = 78;
   }
   
-  void botonPlay(){
-    image(botonPlay,x,y,tam,tam);
+  void botonJugar(){ // Función que muestra y pone en funcionamiento al botón de Jugar
+    image(botonJugar,x,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x,y) <= tam/2){
       Fondo.estado = 3;
     }
   }
   
-  void botonHistoria(){
+  void botonHistoria(){ // Función que muestra y pone en funcionamiento al botón de Historia
     image(botonHistoria,x + tam + 10,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
       Fondo.estado = 2;
     }
   }
   
-  void botonInstrucciones(){
+  void botonInstrucciones(){ // Función que muestra y pone en funcionamiento al botón de Instrucciones
     image(botonHistoria,x - tam - 10,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
       Fondo.estado = 1;
