@@ -36,13 +36,18 @@ class Fondos {
   void PVictoria(){ //Mostrar pantalla de Victoria
     image(imgPVictoria,width/2,height/2,600,600);
     textSize(30);
-      fill(126,54,210);
-      text(Michello.comidas,423,122); // Puntaje de platillos hechos
-      fill(204,81,146);
-      text(Emma.comidas,423,157); // Puntaje de platillos atrapados
+    fill(126,54,210);
+    text(Michello.comidas,423,122); // Puntaje de platillos hechos
+    fill(204,81,146);
+    text(Emma.comidas,423,157); // Puntaje de platillos atrapados
   }
   
   void mostrarPDerrota(){ //Mostrar pantalla de Derrota
     image(imgPDerrota,width/2,height/2,600,600);
+    textSize(30);
+    fill(126,54,210);
+    text(Michello.comidas,433,110); // Puntaje de platillos hechos
+    fill(204,81,146);
+    text(Emma.comidas,433,145); // Puntaje de platillos atrapados
   } 
 }

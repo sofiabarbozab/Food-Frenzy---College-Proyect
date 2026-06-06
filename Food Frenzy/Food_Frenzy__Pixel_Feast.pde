@@ -32,7 +32,7 @@ void draw() {
   case 3: //Juego - Cocina
     Fondo.mostrarCocina();
     break;
-  case 4: //Jugao - Habitación
+  case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();
     break;
   case 5: //Pantalla de Victoria
@@ -42,5 +42,4 @@ void draw() {
     Fondo.mostrarPDerrota();
     break;
   }
-  println(mouseY);
 }
