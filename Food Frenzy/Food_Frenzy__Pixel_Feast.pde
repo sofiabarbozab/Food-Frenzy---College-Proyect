@@ -8,6 +8,7 @@ Botones Boton;
 void setup() {
   size(600, 600);
   imageMode(CENTER);
+  textAlign(CENTER);
   Fondo = new Fondos();
   Emma = new Gamer();
   Michello = new Cocinero();

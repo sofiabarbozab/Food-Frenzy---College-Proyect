@@ -16,6 +16,11 @@ class Botones{
     if(mousePressed && dist(mouseX,mouseY,x,y) <= tam/2){
       Fondo.estado = 3;
     }
+    if(dist(mouseX,mouseY,x,y) <= tam/2){
+      textSize(30);
+      fill(0,255,0);
+      text("JUGAR",x,593);
+    }
   }
   
   void botonHistoria(){ // Función que muestra y pone en funcionamiento al botón de Historia
@@ -23,12 +28,22 @@ class Botones{
     if(mousePressed && dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
       Fondo.estado = 2;
     }
+    if(dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
+      textSize(30);
+      fill(0,255,0);
+      text("HISTORIA",x,593);
+    }
   }
   
   void botonInstrucciones(){ // Función que muestra y pone en funcionamiento al botón de Instrucciones
-    image(botonHistoria,x - tam - 10,y,tam,tam);
+    image(botonInstrucciones,x - tam - 10,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
       Fondo.estado = 1;
+    }
+    if(dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
+      textSize(30);
+      fill(0,255,0);
+      text("INSTRUCCIONES",x,593);
     }
   }
 }
