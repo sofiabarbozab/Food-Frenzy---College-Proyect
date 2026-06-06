@@ -8,7 +8,7 @@ Botones Boton;
 void setup() {
   size(600, 600);
   imageMode(CENTER);
-  textAlign(CENTER);
+  textAlign(CENTER,CENTER);
   Fondo = new Fondos();
   Emma = new Gamer();
   Michello = new Cocinero();
@@ -36,10 +36,11 @@ void draw() {
     Fondo.mostrarHabitacion();
     break;
   case 5: //Pantalla de Victoria
-    Fondo.mostrarPVictoria();
+    Fondo.PVictoria();
     break;
   case 6: //Pantalla de Derrota
     Fondo.mostrarPDerrota();
     break;
   }
+  println(mouseY);
 }

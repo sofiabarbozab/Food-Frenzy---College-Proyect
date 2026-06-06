@@ -1,12 +1,14 @@
 class Cocinero{
   PImage imgCocinero;
-  int x,y,velocidad;
+  int x,y,velocidad,comidas,vidas;
   
   Cocinero(){
     imgCocinero = loadImage("Cocinero_1.png");
     x = width/2;
     y = height/2;
     velocidad =  4;
+    vidas = 3; // Si no logra sacar el platillo del horno antes de que pasen 3 segundos, pierde una vida
+    comidas = 0;
   }
   
   void mostrarCocinero(){ //Función que muestra al Cocinero

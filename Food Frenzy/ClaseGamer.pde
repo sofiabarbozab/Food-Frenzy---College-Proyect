@@ -1,6 +1,6 @@
 class Gamer {
   PImage ImgGamer;
-  int x,y,velocidad;
+  int x,y,velocidad,comidas,vidas;
 
   //constructor.
   Gamer() {
@@ -8,6 +8,8 @@ class Gamer {
     x = width/2;
     y = height/2;
     velocidad = 4;
+    comidas = 0; 
+    vidas = 0; // Si no logra atrapar una comida pierde una vida
   }
   //dibuja de clase.
   void mostrarGamerUno() {

@@ -9,7 +9,7 @@ class Fondos {
     imgHistoria = loadImage("historiaPrueba.png"); // Hay que hacer la imagen de Historia
     imgCocina = loadImage("cocina2.png");
     imgHabitacion = loadImage("habitacion2.png");
-    imgPVictoria = loadImage("victoriaPrueba.png"); // Hay que hacer la imagen de Pantalla de Victoria
+    imgPVictoria = loadImage("pVictoria.png");
     imgPDerrota = loadImage("pDerrota.png");
   }
   
@@ -33,8 +33,13 @@ class Fondos {
     image(imgHabitacion,width/2,height/2,600,600);
   }
   
-  void mostrarPVictoria(){ //Mostrar pantalla de Victoria
+  void PVictoria(){ //Mostrar pantalla de Victoria
     image(imgPVictoria,width/2,height/2,600,600);
+    textSize(30);
+      fill(126,54,210);
+      text(Michello.comidas,423,122); // Puntaje de platillos hechos
+      fill(204,81,146);
+      text(Emma.comidas,423,157); // Puntaje de platillos atrapados
   }
   
   void mostrarPDerrota(){ //Mostrar pantalla de Derrota
