@@ -62,7 +62,7 @@ class Cocinero{
   }
   
   void mostrarCocinero(){ //Función que muestra al Cocinero
-    image(imgCocinero,x,y,100,100);
+    image(neutralSinPlato_Atras_1,x,y,100,100);
   }
 
   void moverCocinero(){ //Función que mueve al Cocinero

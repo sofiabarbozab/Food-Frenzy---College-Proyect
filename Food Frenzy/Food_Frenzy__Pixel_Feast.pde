@@ -5,15 +5,18 @@ Fondos Fondo;
 Comidas Comida;
 Botones Boton;
 
+
 void setup() {
+  frameRate(10);
   size(600, 600);
   imageMode(CENTER);
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER, CENTER);
   Fondo = new Fondos();
   Emma = new Gamer();
   Michello = new Cocinero();
   Comida = new Comidas();
   Boton = new Botones();
+
 }
 void draw() {
   switch(Fondo.estado) {
@@ -22,6 +25,7 @@ void draw() {
     Boton.botonJugar();
     Boton.botonHistoria();
     Boton.botonInstrucciones();
+    
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();
@@ -31,6 +35,8 @@ void draw() {
     break;
   case 3: //Juego - Cocina
     Fondo.mostrarCocina();
+     Emma.dibujarGamer();
+     Emma.moverGamer();
     break;
   case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();
