@@ -4,11 +4,13 @@ Cocinero Michello;
 Fondos Fondo;
 Comidas Comida;
 Botones Boton;
+Temporizador Tempo;
 
 
 void setup() {
-  frameRate(10);
   size(600, 600);
+  frameRate(10);
+  noSmooth();
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
   Fondo = new Fondos();
@@ -16,6 +18,8 @@ void setup() {
   Michello = new Cocinero();
   Comida = new Comidas();
   Boton = new Botones();
+  Tempo = new Temporizador(30);
+  Tempo = new Temporizador(2);
 
 }
 void draw() {
@@ -35,11 +39,13 @@ void draw() {
     break;
   case 3: //Juego - Cocina
     Fondo.mostrarCocina();
-     Emma.dibujarGamer();
-     Emma.moverGamer();
+    Michello.mostrarCocinero();
+    Michello.moverCocinero();
     break;
   case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();
+    Emma.dibujarGamer();
+    Emma.moverGamer();
     break;
   case 5: //Pantalla de Victoria
     Fondo.PVictoria();

@@ -19,7 +19,7 @@ class Gamer {
   PImage[] animFrenteT;
 
   int x, y, velocidad, comidas, vidas;
-  int totalImg = 3;   // FIX: eran 3 frames (0, 1, 2), no 2
+  int totalImg = 3;   // FIX: eran 3 frames (0, 1, 2)
   int imgActual = 0;
   int direccion = 0;
   int estado = 0;     // 0 = Contenta, 1 = Enojada, 2 = Triste
@@ -48,7 +48,7 @@ class Gamer {
     animAtrasT    = new PImage[totalImg];
     animFrenteT   = new PImage[totalImg];
 
-    // FIX: Se cargan los 3 estados correctamente con extensión .png
+    // Carga de las imagenes
     for (int i = 0; i < totalImg; i++) {
       // Contenta
       animDerechaC[i]   = loadImage("Contenta_Derecha_"   + i + ".png");
