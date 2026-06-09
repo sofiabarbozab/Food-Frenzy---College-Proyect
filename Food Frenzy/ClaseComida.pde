@@ -66,48 +66,61 @@ class Comidas {
 
 
   void caerComidacCa() {
-    if (yc > 600) {
-      yc =+ vel;
+    yc += vel;
+
+    // Reaparece si salió por abajo O si fue "comida" (está en -200)
+    if (yc > 600 || yc < 0) {
       xc = int(random(0, 550));
-      yc = -40;
+      yc = -40;  // Entra cayendo desde arriba
     }
   }
+
   void caerComidacoPa() {
-    if (ypa > 600) {
-      ypa =+ vel;
+    ypa += vel;
+
+    if (ypa > 600 || ypa < 0) {
       xpa = int(random(0, 550));
       ypa = -40;
     }
   }
 
   void caerComidacoPo() {
-    if (ypo > 600) {
-      ypo =+ vel;
-      xpo= int(random(0, 550));
+    ypo += vel;
+
+    if (ypo > 600 || ypo < 0) {
+      xpo = int(random(0, 550));
       ypo = -40;
     }
   }
 
 
-  boolean colisionComida(int xpo, int ypo, int tam) {
+  boolean colisionComida() {
+    boolean huboColision = false;
 
-    if (dist(Emma.x, Emma.y, xpo, ypo) < (Emma.tam/2) + (tam/2)) {
-
-      comidas ++;
-      return true;
+    // Colisión con pollo
+    if (dist(Emma.x, Emma.y, xpo, ypo) < (Emma.tam / 2) + (tam / 2)) {
+      comidas++;
+      xpo = -200;
+      ypo = -200;
+      huboColision = true;
     }
 
-    if (dist(Emma.x, Emma.y, xpa, ypa) < (Emma.tam/2) + (tam/2)) {
-
-      comidas ++;
-      return true;
-    }
-    if (dist(Emma.x, Emma.y, xc, yc) < (Emma.tam/2) + (tam/2)) {
-
-      comidas ++;
-      return true;
+    // Colisión con papas
+    if (dist(Emma.x, Emma.y, xpa, ypa) < (Emma.tam / 2) + (tam / 2)) {
+      comidas++;
+      xpa = -200;
+      ypa = -200;
+      huboColision = true;
     }
 
-    return false;
+    // Colisión con carne
+    if (dist(Emma.x, Emma.y, xc, yc) < (Emma.tam / 2) + (tam / 2)) {
+      comidas++;
+      xc = -200;
+      yc = -200;
+      huboColision = true;
+    }
+
+    return huboColision;
   }
 }
