@@ -16,6 +16,7 @@ void setup() {
   noSmooth();
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
+  fuenteArcade = createFont("ARCADECLASSIC.TTF", 32);
   Fondo = new Fondos();
   Emma = new Gamer();
   Michello = new Cocinero();
@@ -23,8 +24,7 @@ void setup() {
   Boton = new Botones();
   Tempo = new Temporizador(30);
   Tempo = new Temporizador(2);
-  fuenteArcade = createFont("ARCADECLASSIC.TTF", 32);
-}
+  }
 void draw() {
   switch(Fondo.estado) {
   case 0: //Pantalla de Inicio
