@@ -1,4 +1,5 @@
 //Contructores de Clases
+PFont fuenteArcade;
 Gamer Emma;
 Cocinero Michello;
 Fondos Fondo;
@@ -8,6 +9,8 @@ Temporizador Tempo;
 
 
 void setup() {
+
+
   size(600, 600);
   frameRate(10);
   noSmooth();
@@ -20,7 +23,7 @@ void setup() {
   Boton = new Botones();
   Tempo = new Temporizador(30);
   Tempo = new Temporizador(2);
-
+  fuenteArcade = createFont("ARCADECLASSIC.TTF", 32);
 }
 void draw() {
   switch(Fondo.estado) {
@@ -29,7 +32,7 @@ void draw() {
     Boton.botonJugar();
     Boton.botonHistoria();
     Boton.botonInstrucciones();
-    
+
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();
@@ -41,6 +44,10 @@ void draw() {
     Fondo.mostrarCocina();
     Michello.mostrarCocinero();
     Michello.moverCocinero();
+    Comida.dibujarComidacruda();
+    Comida.sostenercomidapa();
+    Comida.sostenercomidac();
+    Comida.sostenercomidapo();
     break;
   case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();

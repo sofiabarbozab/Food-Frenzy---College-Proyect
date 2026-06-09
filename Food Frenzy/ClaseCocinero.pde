@@ -164,12 +164,12 @@ class Cocinero {
       direccion = 0;
       avanzarAnimacion();
 
-    } else if (keyPressed && keyCode == UP && y > 50) {
+    } else if (keyPressed && keyCode == UP && y > 140) {
       y -= velocidad;
       direccion = 2;
       avanzarAnimacion();
 
-    } else if (keyPressed && keyCode == DOWN && y < 405) {
+    } else if (keyPressed && keyCode == DOWN && y < 425) {
       y += velocidad;
       direccion = 3;
       avanzarAnimacion();

@@ -17,8 +17,10 @@ class Botones{
       Fondo.estado = 3;
     }
     if(dist(mouseX,mouseY,x,y) <= tam/2){
-      textSize(30);
-      fill(0,255,0);
+      textFont(fuenteArcade);
+      textSize(45);
+       stroke(0);
+      fill(255, 255, 0);
       text("JUGAR",x,580);
     }
   }
@@ -30,7 +32,8 @@ class Botones{
     }
     if(dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
       textSize(30);
-      fill(0,255,0);
+      stroke(0);
+      fill(255,255,0);
       text("HISTORIA",x,580);
     }
   }
@@ -42,7 +45,8 @@ class Botones{
     }
     if(dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
       textSize(30);
-      fill(0,255,0);
+       stroke(0);
+      fill(255,255,0);
       text("INSTRUCCIONES",x,580);
     }
   }

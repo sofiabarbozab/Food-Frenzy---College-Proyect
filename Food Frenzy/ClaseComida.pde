@@ -8,9 +8,9 @@ class Comidas {
   PImage ImgPapasco;
   PImage ImgPolloco;
   Comidas() {
-    xpo = 190;
-    xpa = 240;
-    xc = 290;
+    xpo = 240;
+    xpa = 290;
+    xc = 335;
     ypo = 500;
     ypa = 500;
     yc = 500;
@@ -46,16 +46,16 @@ class Comidas {
 
 
   void dibujarComidacruda() {
-    image(ImgCarnec, xc, yc, 60, 60);
-    image(ImgPapasc, xpa, ypa, 60, 60);
-    image(ImgPolloc, xpo, ypo, 60, 60);
+    image(ImgCarnec, xc, yc, 40, 40);
+    image(ImgPapasc, xpa, ypa, 40, 40);
+    image(ImgPolloc, xpo, ypo, 40, 40);
     comidaCruda = true;
   }
 
   void dibujarComidacocida() {
-    image(ImgCarneco, xc, yc, 60, 60);
-    image(ImgPapasco, xpa, ypa, 60, 60);
-    image(ImgPolloco, xpo, ypo, 60, 60);
+    image(ImgCarneco, xc, yc, 40, 40);
+    image(ImgPapasco, xpa, ypa, 40,40);
+    image(ImgPolloco, xpo, ypo, 40, 40);
     comidaCocida = true;
   }
 }
