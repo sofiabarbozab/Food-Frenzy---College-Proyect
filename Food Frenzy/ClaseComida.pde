@@ -1,6 +1,6 @@
 class Comidas {
-  int xpo, ypo, xpa, ypa, xc, yc;
-  boolean comidaCruda, comidaCocida;
+  int xpo, ypo, xpa, ypa, xc, yc, vel, tam, comidas;
+  boolean comidaCruda, comidaCocida, colisionComida;
   PImage ImgCarnec;
   PImage ImgPapasc;
   PImage ImgPolloc;
@@ -8,6 +8,7 @@ class Comidas {
   PImage ImgPapasco;
   PImage ImgPolloco;
   Comidas() {
+    tam = 40;
     xpo = 240;
     xpa = 290;
     xc = 335;
@@ -54,8 +55,59 @@ class Comidas {
 
   void dibujarComidacocida() {
     image(ImgCarneco, xc, yc, 40, 40);
-    image(ImgPapasco, xpa, ypa, 40,40);
+    image(ImgPapasco, xpa, ypa, 40, 40);
     image(ImgPolloco, xpo, ypo, 40, 40);
     comidaCocida = true;
+
+    if (colisionComida == true) {
+    }
+  }
+
+
+
+  void caerComidacCa() {
+    if (yc > 600) {
+      yc =+ vel;
+      xc = int(random(0, 550));
+      yc = -40;
+    }
+  }
+  void caerComidacoPa() {
+    if (ypa > 600) {
+      ypa =+ vel;
+      xpa = int(random(0, 550));
+      ypa = -40;
+    }
+  }
+
+  void caerComidacoPo() {
+    if (ypo > 600) {
+      ypo =+ vel;
+      xpo= int(random(0, 550));
+      ypo = -40;
+    }
+  }
+
+
+  boolean colisionComida(int xpo, int ypo, int tam) {
+
+    if (dist(Emma.x, Emma.y, xpo, ypo) < (Emma.tam/2) + (tam/2)) {
+
+      comidas ++;
+      return true;
+    }
+
+    if (dist(Emma.x, Emma.y, xpa, ypa) < (Emma.tam/2) + (tam/2)) {
+
+      comidas ++;
+      return true;
+    }
+    if (dist(Emma.x, Emma.y, xc, yc) < (Emma.tam/2) + (tam/2)) {
+
+      comidas ++;
+      return true;
+    }
+
+    return false;
   }
 }

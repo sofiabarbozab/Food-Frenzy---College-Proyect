@@ -22,15 +22,17 @@ class Gamer {
   int totalImg = 3;   // FIX: eran 3 frames (0, 1, 2)
   int imgActual = 0;
   int direccion = 0;
-  int estado = 0;     // 0 = Contenta, 1 = Enojada, 2 = Triste
+  int estado = 0;
+  int tam;// 0 = Contenta, 1 = Enojada, 2 = Triste
 
   // Constructor
   Gamer() {
     x = width / 2;
     y = height / 2;
     velocidad = 4;
-    comidas = 0;
+    
     vidas = 3;
+    tam = 100;
 
     // Inicialización de arrays
     animDerechaC  = new PImage[totalImg];
@@ -134,4 +136,7 @@ class Gamer {
       imgActual = 0; // FIX: un solo reset al no presionar ninguna tecla
     }
   }
+
+
+
 }
