@@ -9,8 +9,6 @@ Temporizador Tempo;
 
 
 void setup() {
-
-
   size(600, 600);
   frameRate(10);
   noSmooth();
@@ -24,7 +22,7 @@ void setup() {
   Boton = new Botones();
   Tempo = new Temporizador(30);
   Tempo = new Temporizador(2);
-  }
+}
 void draw() {
   switch(Fondo.estado) {
   case 0: //Pantalla de Inicio
@@ -32,22 +30,23 @@ void draw() {
     Boton.botonJugar();
     Boton.botonHistoria();
     Boton.botonInstrucciones();
-
     break;
   case 1: //Menú de Instrucciones
     Fondo.mostrarInstrucciones();
+    Boton.botonJugar();
     break;
   case 2: //Pantalla de Historia
     Fondo.mostrarHistoria();
+    Boton.botonJugar();
     break;
   case 3: //Juego - Cocina
     Fondo.mostrarCocina();
     Michello.mostrarCocinero();
     Michello.moverCocinero();
-    Comida.dibujarComidacruda();
-    Comida.sostenercomidapa();
-    Comida.sostenercomidac();
-    Comida.sostenercomidapo();
+    Comida.dibujarComidaCruda();
+    Comida.sostenerComida();
+    Comida.depositarHorno();
+    Comida.actualizarHorno();
     break;
   case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();

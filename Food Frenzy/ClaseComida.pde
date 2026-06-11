@@ -1,6 +1,7 @@
 class Comidas {
   int xpo, ypo, xpa, ypa, xc, yc, vel, tam, comidas;
-  boolean comidaCruda, comidaCocida, colisionComida;
+  int hx1, hx2, hy, tiempoHorno, tiempoCoccion;
+  boolean comidaCruda,colisionComida, hayComidaEnHorno, comidaLista;
   PImage ImgCarnec;
   PImage ImgPapasc;
   PImage ImgPolloc;
@@ -8,6 +9,9 @@ class Comidas {
   PImage ImgPapasco;
   PImage ImgPolloco;
   Comidas() {
+    hx1 = 300;
+    hx2 = 600;
+    hy = 165;
     tam = 40;
     xpo = 240;
     xpa = 290;
@@ -15,6 +19,11 @@ class Comidas {
     ypo = 500;
     ypa = 500;
     yc = 500;
+    tiempoHorno = 0;
+    tiempoCoccion = 180;
+    comidaLista = false;
+    hayComidaEnHorno = false;
+    comidaCruda =true;
     ImgCarnec = loadImage("carneCruda.png");
     ImgPapasc = loadImage("papasCrudas.png");
     ImgPolloc = loadImage("polloCrudo.png");
@@ -23,48 +32,70 @@ class Comidas {
     ImgPolloco = loadImage("polloCocido.png");
   }
 
-  void sostenercomidapa() {
-    if (comidaCruda == true && dist(Michello.x, Michello.y, xpa, ypa) < 100) {
+  void sostenerComida() {
+    if (dist(Michello.x, Michello.y, xpa, ypa) < 100) {
       xpa = Michello.x+15;
       ypa = Michello.y+20;
+      Michello.llevandoPlato = true;
     }
-  }
-
-  void sostenercomidac() {
-    if (comidaCruda == true && dist(Michello.x, Michello.y, xc, yc) < 100) {
+    if (dist(Michello.x, Michello.y, xc, yc) < 100) {
       xc = Michello.x+15;
       yc = Michello.y+30;
+      Michello.llevandoPlato = true;
     }
-  }
-
-  void sostenercomidapo() {
-    if (comidaCruda == true && dist(Michello.x, Michello.y, xpo, ypo) < 100) {
+    if (dist(Michello.x, Michello.y, xpo, ypo) < 100) {
       xpo = Michello.x+15;
       ypo = Michello.y+10;
+      Michello.llevandoPlato = true;
+    }
+  }
+  
+  void dibujarComidaCruda() {
+    if(comidaCruda){
+      image(ImgCarnec, xc, yc, 40, 40);
+      image(ImgPapasc, xpa, ypa, 40, 40);
+      image(ImgPolloc, xpo, ypo, 40, 40);
     }
   }
 
-
-
-  void dibujarComidacruda() {
-    image(ImgCarnec, xc, yc, 40, 40);
-    image(ImgPapasc, xpa, ypa, 40, 40);
-    image(ImgPolloc, xpo, ypo, 40, 40);
-    comidaCruda = true;
-  }
-
-  void dibujarComidacocida() {
-    image(ImgCarneco, xc, yc, 40, 40);
-    image(ImgPapasco, xpa, ypa, 40, 40);
-    image(ImgPolloco, xpo, ypo, 40, 40);
-    comidaCocida = true;
-
+  void dibujarComidaCocida() {
+    if (!comidaCruda){
+      image(ImgCarneco, xc, yc, 40, 40);
+      image(ImgPapasco, xpa, ypa, 40, 40);
+      image(ImgPolloco, xpo, ypo, 40, 40);
+    }
     if (colisionComida == true) {
     }
   }
-
-
-
+  
+  void depositarHorno(){
+    boolean cercaHorno = (Michello.x >= hx1 && Michello.y <= hy && Michello.x <= hx2);
+    if(cercaHorno && Michello.llevandoPlato && !hayComidaEnHorno && keyPressed && key == 'e'){
+      hayComidaEnHorno= true;
+      comidaLista = false;
+      tiempoHorno = frameCount;
+      Michello.llevandoPlato = false;
+      xc  = -200; yc  = -200;
+      xpa = -200; ypa = -200;
+      xpo = -200; ypo = -200;
+      println("Si");
+    }  
+  }
+  
+  void actualizarHorno() {
+  if (hayComidaEnHorno && !comidaLista) {
+    if (frameCount - tiempoHorno >= tiempoCoccion) {
+      comidaLista = true; 
+    }
+  }
+}
+  
+  void keyPressed(){
+    if(key == 'e' && Michello.x <= 521 && Michello.y == 217 && Michello.llevandoPlato == true && comidaCruda == true){
+      
+    }
+  }
+  
   void caerComidacCa() {
     yc += vel;
 
