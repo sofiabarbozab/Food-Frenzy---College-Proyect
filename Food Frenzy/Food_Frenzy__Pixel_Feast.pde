@@ -5,8 +5,6 @@ Cocinero Michello;
 Fondos Fondo;
 Comidas Comida;
 Botones Boton;
-Temporizador Tempo;
-
 
 void setup() {
   size(600, 600);
@@ -20,8 +18,6 @@ void setup() {
   Michello = new Cocinero();
   Comida = new Comidas();
   Boton = new Botones();
-  Tempo = new Temporizador(30);
-  Tempo = new Temporizador(2);
 }
 void draw() {
   switch(Fondo.estado) {
@@ -41,17 +37,25 @@ void draw() {
     break;
   case 3: //Juego - Cocina
     Fondo.mostrarCocina();
-    Michello.mostrarCocinero();
     Michello.moverCocinero();
-    Comida.dibujarComidaCruda();
     Comida.sostenerComida();
+    Comida.actualizarPosicionEnMano();
+    Comida.dibujarComidaCruda();
+    Comida.dibujarComidaCocida();
+    Comida.revisarPuerta();
     Comida.depositarHorno();
     Comida.actualizarHorno();
+    Comida.retirarHorno();
+    Michello.mostrarCocinero();
     break;
   case 4: //Juego - Habitación
     Fondo.mostrarHabitacion();
     Emma.dibujarGamer();
     Emma.moverGamer();
+    Comida.caerComidacCa();
+    Comida.caerComidacoPa();
+    Comida.caerComidacoPo();
+    Comida.colisionComida();
     break;
   case 5: //Pantalla de Victoria
     Fondo.PVictoria();
