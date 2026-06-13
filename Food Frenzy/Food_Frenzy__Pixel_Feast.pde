@@ -52,6 +52,7 @@ void draw() {
     Fondo.mostrarHabitacion();
     Emma.dibujarGamer();
     Emma.moverGamer();
+    Comida.dibujarComidaCocida();
     Comida.caerComidacCa();
     Comida.caerComidacoPa();
     Comida.caerComidacoPo();
@@ -64,4 +65,6 @@ void draw() {
     Fondo.mostrarPDerrota();
     break;
   }
+  println(Comida.comidas);
+  println(mouseY);
 }

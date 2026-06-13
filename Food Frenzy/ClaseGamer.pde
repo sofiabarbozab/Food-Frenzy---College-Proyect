@@ -116,19 +116,19 @@ class Gamer {
   void moverGamer() {
     // FIX: if/else if para que solo UN bloque se ejecute por frame
     // y el reset de imgActual ocurra una sola vez al soltar la tecla
-    if (keyPressed && key == 'a' && x > 0) {
+    if (keyPressed && keyCode == LEFT && x > 0) {
       x -= velocidad;
       direccion = 1;
       avanzarAnimacion();
-    } else if (keyPressed && key == 'd' && x < width) {
+    } else if (keyPressed && keyCode == RIGHT && x < width) {
       x += velocidad;
       direccion = 0;
       avanzarAnimacion();
-    } else if (keyPressed && key == 'w' && y > 0) {
+    } else if (keyPressed && keyCode == UP && y > 0) {
       y -= velocidad;
       direccion = 2;
       avanzarAnimacion();
-    } else if (keyPressed && key == 's' && y < height) {
+    } else if (keyPressed && keyCode == DOWN && y < height) {
       y += velocidad;
       direccion = 3;
       avanzarAnimacion();

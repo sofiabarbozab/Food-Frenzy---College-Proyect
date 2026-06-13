@@ -118,26 +118,29 @@ class Comidas {
   }
 
   void caerComidacCa() {
-    yc += vel;
-    if (yc > 600 || yc < 0) {
-      xc = int(random(0, 550));
-      yc = -40;
+    xc = int(random(0, 550));
+    yc = -40;
+    int destinoY = int(random(237, 417));
+    while (yc <= destinoY) {
+      yc += vel;
     }
   }
 
   void caerComidacoPa() {
-    ypa += vel;
-    if (ypa > 600 || ypa < 0) {
-      xpa = int(random(0, 550));
-      ypa = -40;
+    xpa = int(random(0, 550));
+    ypa = -40;
+    int destinoY = int(random(237, 417));
+    while (ypa <= destinoY) {
+      ypa += vel;
     }
   }
 
   void caerComidacoPo() {
-    ypo += vel;
-    if (ypo > 600 || ypo < 0) {
-      xpo = int(random(0, 550));
-      ypo = -40;
+    xpo = int(random(0, 550));
+    ypo = -40;
+    int destinoY = int(random(237, 417));
+    while (ypo <= destinoY) {
+      ypo += vel;
     }
   }
 
