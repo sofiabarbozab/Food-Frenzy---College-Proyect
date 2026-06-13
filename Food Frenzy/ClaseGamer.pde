@@ -1,40 +1,39 @@
 class Gamer {
 
-  // Arrays de animación - Contenta
+  // 3 estados de ánimo × 4 direcciones = 12 sets de animación
+  // Contenta
   PImage[] animDerechaC;
   PImage[] animIzquierdaC;
   PImage[] animAtrasC;
   PImage[] animFrenteC;
 
-  // Arrays de animación - Enojada
+  // Enojada
   PImage[] animDerechaE;
   PImage[] animIzquierdaE;
   PImage[] animAtrasE;
   PImage[] animFrenteE;
 
-  // Arrays de animación - Triste
+  // Triste
   PImage[] animDerechaT;
   PImage[] animIzquierdaT;
   PImage[] animAtrasT;
   PImage[] animFrenteT;
 
   int x, y, velocidad, comidas, vidas;
-  int totalImg = 3;   // FIX: eran 3 frames (0, 1, 2)
+  int totalImg = 3;    // 3 frames por animación (0, 1, 2)
   int imgActual = 0;
-  int direccion = 0;
-  int estado = 0;
-  int tam;// 0 = Contenta, 1 = Enojada, 2 = Triste
+  int direccion = 0;   // 0=derecha 1=izquierda 2=atrás 3=frente
+  int estado = 0;      // 0=contenta 1=enojada 2=triste
+  int tam;             // Tamaño del hitbox para colisiones
 
-  // Constructor
   Gamer() {
     x = width / 2;
     y = height / 2;
     velocidad = 4;
-    
     vidas = 3;
     tam = 100;
 
-    // Inicialización de arrays
+    // Inicialización de los 12 arrays
     animDerechaC  = new PImage[totalImg];
     animIzquierdaC = new PImage[totalImg];
     animAtrasC    = new PImage[totalImg];
@@ -50,7 +49,7 @@ class Gamer {
     animAtrasT    = new PImage[totalImg];
     animFrenteT   = new PImage[totalImg];
 
-    // Carga de las imagenes
+    // Carga de todas las imágenes para los 3 estados de ánimo
     for (int i = 0; i < totalImg; i++) {
       // Contenta
       animDerechaC[i]   = loadImage("Contenta_Derecha_"   + i + ".png");
@@ -72,8 +71,8 @@ class Gamer {
     }
   }
 
-  // FIX: módulo para que imgActual cicle y no desborde el array
   void avanzarAnimacion() {
+    // Módulo para ciclar el índice sin salirse del array
     imgActual = (imgActual + 1) % totalImg;
   }
 
@@ -83,7 +82,7 @@ class Gamer {
     PImage[] animAtras;
     PImage[] animFrente;
 
-    // Selección de arrays según estado
+    // Selecciona el set de animación según el estado de ánimo actual
     if (estado == 1) {
       animDerecha   = animDerechaE;
       animIzquierda = animIzquierdaE;
@@ -101,7 +100,7 @@ class Gamer {
       animFrente    = animFrenteC;
     }
 
-    // Dibujo según dirección
+    // Dibuja el frame actual según la dirección que mira
     if (direccion == 0) {
       image(animDerecha[imgActual], x, y);
     } else if (direccion == 1) {
@@ -114,8 +113,7 @@ class Gamer {
   }
 
   void moverGamer() {
-    // FIX: if/else if para que solo UN bloque se ejecute por frame
-    // y el reset de imgActual ocurra una sola vez al soltar la tecla
+    // Movimiento con flechas por toda la pantalla (sin límites de zona)
     if (keyPressed && keyCode == LEFT && x > 0) {
       x -= velocidad;
       direccion = 1;
@@ -133,10 +131,7 @@ class Gamer {
       direccion = 3;
       avanzarAnimacion();
     } else {
-      imgActual = 0; // FIX: un solo reset al no presionar ninguna tecla
+      imgActual = 0; // Vuelve al frame de reposo cuando no se presiona ninguna tecla
     }
   }
-
-
-
 }

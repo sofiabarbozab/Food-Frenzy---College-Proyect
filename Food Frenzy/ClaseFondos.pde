@@ -1,9 +1,9 @@
 class Fondos {
-  int estado;
+  int estado; // Controla qué pantalla/fase se muestra (máquina de estados global)
   PImage imgPInicio, imgInstrucciones, imgHistoria, imgCocina, imgHabitacion, imgPVictoria, imgPDerrota;
   
   Fondos(){
-    estado = 0;
+    estado = 0; // Arranca en la pantalla de inicio
     imgPInicio = loadImage("pInicio.png");
     imgInstrucciones = loadImage("instruccionesPrueba.png"); // Hay que hacer la imagen de Instrucciones
     imgHistoria = loadImage("historia.png"); // Hay que hacer la imagen de Historia

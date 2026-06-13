@@ -11,11 +11,12 @@ class Botones{
     tam = 78;
   }
   
-  void botonJugar(){ // Función que muestra y pone en funcionamiento al botón de Jugar
+  void botonJugar(){ // Muestra el botón y al hacer click va al juego (estado 3)
     image(botonJugar,x,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x,y) <= tam/2){
       Fondo.estado = 3;
     }
+    // Si el mouse está encima, muestra el nombre en texto arcade amarillo
     if(dist(mouseX,mouseY,x,y) <= tam/2){
       textFont(fuenteArcade);
       textSize(45);
@@ -25,7 +26,7 @@ class Botones{
     }
   }
   
-  void botonHistoria(){ // Función que muestra y pone en funcionamiento al botón de Historia
+  void botonHistoria(){ // Muestra el botón y al hacer click va a la historia (estado 2)
     image(botonHistoria,x + tam + 10,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x + tam + 10,y) <= tam/2){
       Fondo.estado = 2;
@@ -38,7 +39,7 @@ class Botones{
     }
   }
   
-  void botonInstrucciones(){ // Función que muestra y pone en funcionamiento al botón de Instrucciones
+  void botonInstrucciones(){ // Muestra el botón y al hacer click va a instrucciones (estado 1)
     image(botonInstrucciones,x - tam - 10,y,tam,tam);
     if(mousePressed && dist(mouseX,mouseY,x - tam - 10,y) <= tam/2){
       Fondo.estado = 1;
